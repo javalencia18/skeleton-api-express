@@ -1,0 +1,21 @@
+{
+  "workbench.startupEditor": "newUntitledFile",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.guides.bracketPairs": "active",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.rulers": [
+    80,120
+  ],
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+}

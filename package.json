@@ -1,0 +1,108 @@
+{
+  "name": "app-api-express",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "20.12.2"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "dev": "nodemon",
+    "start": "pm2 start ecosystem.config.js",
+    "build": "tsc --project tsconfig.json && cp -r public build/",
+    "lint": "eslint --ignore-path .gitignore . --ext .js,.ts",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest",
+    "clean": "rimraf \"node_modules\"",
+    "clean:build": "rimraf \"build\"",
+    "db:seed:all": "npx sequelize-cli db:seed:all",
+    "migrate:up": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "migrate:undo:all": "npx sequelize-cli db:migrate:undo:all",
+    "commitlint": "commitlint --edit"
+  },
+  "keywords": [
+    "typescript",
+    "hexagonal architecture",
+    "skeleton"
+  ],
+  "author": "",
+  "license": "ISC",
+  "lint-staged": {
+    "*.(js|ts)": [
+      "npm run lint:fix"
+    ]
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "dependencies": {
+    "@improbable-eng/grpc-web": "^0.15.0",
+    "@improbable-eng/grpc-web-node-http-transport": "^0.15.0",
+    "aws-sdk": "^2.1409.0",
+    "axios": "^0.26.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.7",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "exceljs": "^4.4.0",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "image-downloader": "^4.3.0",
+    "jsonwebtoken": "^9.0.0",
+    "lowdb": "^1.0.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "2.2.5",
+    "nanoid": "^3.3.4",
+    "nodemailer": "^6.9.1",
+    "request-ip": "^3.3.0",
+    "sequelize": "^6.28.0",
+    "sequelize-typescript": "^2.1.5",
+    "uuid": "^9.0.0",
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.13",
+    "@types/dotenv": "^8.2.0",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.14",
+    "@types/express-validator": "^3.0.0",
+    "@types/jest": "^29.5.8",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/lowdb": "^1.0.9",
+    "@types/morgan": "^1.9.3",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^18.19.31",
+    "@types/nodemailer": "^6.4.7",
+    "@types/nodemon": "^1.19.2",
+    "@types/request-ip": "^0.0.41",
+    "@types/sequelize": "^4.28.14",
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-hexagonal-architecture": "^1.0.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^9.0.11",
+    "jest": "^29.7.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2",
+    "typescript": "^4.9.5"
+  }
+}
