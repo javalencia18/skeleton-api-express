@@ -12,7 +12,7 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ["src/*/*.ts"],
+      files: ["src/*/*/*.ts"],
       rules: {
         "hexagonal-architecture/enforce": ["error"],
       },
