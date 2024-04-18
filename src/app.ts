@@ -8,9 +8,7 @@ import * as path from "path"
 // CONFIG
 import { PORT_APP } from "./app.config"
 import logger from "./logger/infrastructure/loggerImpl"
-
-// RUTAS
-import healthRouter from "./health/infrastructure/health.route"
+import routes from "./routes"
 
 const boostrap = (): void => {
   const app = express()
@@ -23,10 +21,7 @@ const boostrap = (): void => {
 
   // RUTA DE RECURSOS PÚBLICOS
   app.use("/public", express.static(path.join(__dirname, "/resources")))
-
-  /* ROUTES */
-  const prefixApi = "/api"
-  app.use(prefixApi, healthRouter)
+  app.use(routes)
 
   // MIDDLEWARE DE ERRORES
   app.use((err, _req, res, _next) => {
